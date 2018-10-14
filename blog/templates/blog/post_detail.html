@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+
+        {% endif %}
+        <h4>Record Ref: {{ post.pk }}</h4>
+        <p class="date">
+          Submitted on {{ post.published_date }}
+        </p>
+        <p>Hosp No: {{ post.hosp_no }}, Adm source: {{ post.asource }}, Adm type: {{ post.atype }}, Age Grp: {{ post.age_grp }}, Sex: {{ post.sex }}</p>
+        <p>Disch year: {{ post.dyear }}, Adm qtr: {{ post.aqtr }}, DRG: {{ post.drg }}, MDC: {{ post.mdc }}, DX1: {{ post.dx1 }}, PX1: {{ post.px1 }}</p>
+        <h4>Predicted Outcome: </h4>
+        <p>LOS: , Disch Status:</p>
+        <hr/>
+    </div>
+{% endblock %}
+
+'hosp_no', 'atype', 'asource', 'age_grp', 'sex', 'drg', 'mdc', 'dx1',
+    'px1', 'dyear', 'aqtr', 'dqtr', 'CCSDX', 'pdays', 'dstat'

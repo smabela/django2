@@ -3,11 +3,16 @@
 {% block content %}
     {% for post in posts %}
         <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+
+            <h4><a href="{% url 'post_detail' pk=post.pk %}">Record Ref: {{ post.pk }}</a></h4>
+            <p class="date">
+                Submitted on: {{ post.published_date }}
+            </p>
+            <p>Hosp No: {{ post.hosp_no }}, Adm source: {{ post.asource }}, Adm type: {{ post.atype }}, Age Grp: {{ post.age_grp }}, Sex: {{ post.sex }}</p>
+            <p>Disch year: {{ post.dyear }}, Adm qtr: {{ post.aqtr }}, DRG: {{ post.drg }}, MDC: {{ post.mdc }}, DX1: {{ post.dx1 }}, PX1: {{ post.px1 }}</p>
+            <h4>Predicted Outcome: </h4>
+            <p>LOS: , Disch Status:</p>
+            <hr/>
         </div>
     {% endfor %}
 {% endblock %}
